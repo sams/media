@@ -8,7 +8,7 @@
  * Redistributions of files must retain the above copyright notice.
  *
  * PHP version 5
- * CakePHP version 1.3
+ * CakePHP version 2.0
  *
  * @package    media
  * @subpackage media.shells
