@@ -17,7 +17,6 @@
  * @link       http://github.com/davidpersson/media
  */
 App::uses('ConnectionManager', 'Model');
-require_once(App::path('Config', 'Media').'core.php');
 App::uses('Folder', 'Utility');
 
 Configure::write('Cache.disable', true);
