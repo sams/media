@@ -92,7 +92,7 @@ class MediaShell extends Shell {
 		$this->out('[Q]uit');
 
 		$action = $this->in(
-			__('What would you like to do?', true),
+			__('What would you like to do?'),
 			array('I', 'P', 'S', 'M', 'H', 'Q'),
 			'q'
 		);
