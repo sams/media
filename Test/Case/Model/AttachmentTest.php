@@ -35,7 +35,7 @@ require_once 'Media/Info.php';
  * @package    media
  * @subpackage media.tests.cases.models
  */
-class AttachmentTestCase extends CakeTestCase {
+class AttachmentTest extends CakeTestCase {
 
 	var $fixtures = array(
 		'plugin.media.movie', 'plugin.media.actor',
@@ -81,7 +81,7 @@ class AttachmentTestCase extends CakeTestCase {
 			'group' => null,
 			'alternative' => null,
 		);
-		$this->assertEqual($result['Attachment'], $expected);
+		$this->assertEquals($result['Attachment'], $expected);
 
 		$result = $Model->delete($Model->getLastInsertID());
 		$this->assertTrue($result);
@@ -128,7 +128,7 @@ class AttachmentTestCase extends CakeTestCase {
 				'group' => null,
 				'alternative' => null,
 		));
-		$this->assertEqual($result['Attachment'], $expected);
+		$this->assertEquals($result['Attachment'], $expected);
 
 		$result = $Model->delete($Model->getLastInsertID());
 		$this->assertTrue($result);
@@ -187,7 +187,7 @@ class AttachmentTestCase extends CakeTestCase {
 				'alternative' => null,
 			)
 		);
-		$this->assertEqual($result['Attachment'], $expected);
+		$this->assertEquals($result['Attachment'], $expected);
 
 		Media_Process::config($_backupProcess);
 		Media_Info::config($_backupInfo);
@@ -248,7 +248,7 @@ class AttachmentTestCase extends CakeTestCase {
 					'group' => 'photo',
 					'alternative' => null,
 		)));
-		$this->assertEqual($result, $expected);
+		$this->assertEquals($result, $expected);
 
 		$result = $Model->delete($Model->getLastInsertID());
 		$this->assertTrue($result);

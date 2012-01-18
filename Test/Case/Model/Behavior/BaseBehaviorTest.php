@@ -36,7 +36,7 @@ SimpleTest::ignore('BaseBehaviorTestCase');
  * @package    media
  * @subpackage media.tests.cases.models.behaviors
  */
-class BaseBehaviorTestCase extends CakeTestCase {
+class BaseBehaviorTest extends CakeTestCase {
 
 	var $fixtures = array('plugin.media.song', 'core.image');
 
