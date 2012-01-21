@@ -23,6 +23,7 @@
  * @package    media
  * @subpackage media.shells.tasks
  */
+App::uses('MediaShell', 'Media.Console/Command');
 class MakeTask extends MediaShell {
 
 	var $source;

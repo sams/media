@@ -16,6 +16,7 @@
  * @license    http://www.opensource.org/licenses/mit-license.php The MIT License
  * @link       http://github.com/davidpersson/media
  */
+App::uses('Shell', 'Console');
 App::uses('ConnectionManager', 'Model');
 require_once(dirname(dirname(dirname(__FILE__))) . DS . 'Config' . DS.'bootstrap.php');
 App::uses('Folder', 'Utility');
@@ -36,7 +37,7 @@ class MediaShell extends Shell {
  * @var string
  * @access public
  */
-	var $tasks = array('Sync', 'Make');
+	var $tasks = array('Media.Sync', 'Media.Make');
 
 /**
  * Verbose mode

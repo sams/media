@@ -47,6 +47,7 @@
  * @package    media
  * @subpackage media.shells.tasks
  */
+App::uses('MediaShell', 'Media.Console/Command');
 class SyncTask extends MediaShell {
 
 /**
