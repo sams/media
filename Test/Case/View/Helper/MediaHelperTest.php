@@ -20,14 +20,21 @@
 if (!defined('MEDIA')) {
 	define('MEDIA', TMP . 'tests' . DS);
 } elseif (MEDIA != TMP . 'tests' . DS) {
+	echo MEDIA;
 	trigger_error('MEDIA constant already defined and not pointing to tests directory.', E_USER_ERROR);
 }
 
-require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'config' . DS . 'core.php';
-require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'fixtures' . DS . 'test_data.php';
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'bootstrap.php';
+require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Fixture' . DS . 'test_data.php';
 
-App::import('Core', array('Helper', 'AppHelper', 'ClassRegistry'));
-App::import('Helper', 'Media.Media');
+//App::import('Core', array('Helper', 'AppHelper', 'ClassRegistry'));
+App::core('ClassRegistry');
+App::uses('CakeRequest', 'Network');
+App::uses('CakeEvent', 'Event');
+App::uses('Helper', 'View');
+App::uses('AppHelper', 'View/Helper');
+App::uses('MediaHelper', 'Media.View/Helper');
+App::uses('View', 'View');
 
 /**
  * Mock Media Helper
@@ -90,7 +97,8 @@ class MediaHelperTest extends CakeTestCase {
 			$this->TmpFolder->pwd() . 'transfer' . DS => false,
 			$this->TmpFolder->pwd() . 'theme' . DS  => 'media/theme/'
 		);
-		$this->Helper = new MediaHelper($settings);
+		$View = new View(new CakeRequest);
+		$this->Helper = new MediaHelper($View, $settings);
 	}
 
 	function tearDown() {
