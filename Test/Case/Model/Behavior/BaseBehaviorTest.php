@@ -17,18 +17,16 @@
  * @link       http://github.com/davidpersson/media
  */
 App::Import('Model', 'App');
-require_once CORE_TEST_CASES . DS . 'libs' . DS . 'model' .DS . 'models.php';
+require_once CORE_TEST_CASES . DS . 'Model' .DS . 'models.php';
 require_once dirname(dirname(__FILE__)) . DS . 'models.php';
-require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'fixtures' . DS . 'test_data.php';
+require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Fixture' . DS . 'test_data.php';
 
 if (!defined('MEDIA')) {
 	define('MEDIA', TMP . 'tests' . DS);
 } elseif (MEDIA != TMP . 'tests' . DS) {
 	trigger_error('MEDIA constant already defined and not pointing to tests directory.', E_USER_ERROR);
 }
-require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'config' . DS . 'core.php';
-
-SimpleTest::ignore('BaseBehaviorTestCase');
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'bootstrap.php';
 
 /**
  * Base Behavior Test Case Class
