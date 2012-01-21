@@ -94,8 +94,10 @@
  *        define('MEDIA_TRANSFER_URL', false);
  *    }}}
  */
-if (!defined('MEDIA')) {
+if (!defined('MEDIA') && (basename($_SERVER['SCRIPT_NAME']) !== 'test.php')) {
 	define('MEDIA', WWW_ROOT . 'media' . DS);
+} elseif(!defined('MEDIA') && (basename($_SERVER['SCRIPT_NAME']) == 'test.php')) {
+	define('MEDIA', TMP . 'tests' . DS);
 }
 if (!defined('MEDIA_STATIC')) {
 	define('MEDIA_STATIC', MEDIA . 'static' . DS);
