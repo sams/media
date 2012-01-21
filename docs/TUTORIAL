@@ -22,7 +22,7 @@ your app's config/core.php and add the following code.
 In order to initialize the directories for storing i.e. uploaded files
 we use the shell which comes with the plugin. You can also do this 
 manually of course.
-$ cake/console/cake media init
+$ ./Console/cake Media.Media init
 
 Some directories must be writable so that the webserver (assuming it
 runs under a different user) can store files in there.
@@ -39,9 +39,9 @@ files via the form. Modify the template in views/posts/add and change
 the form create statement by specifying type file as well as adding
 an input for the file to be uploaded.
 {{{
-echo $form->create('Post', array('type' => 'file));
+echo $this->Form->create('Post', array('type' => 'file));
 ...
-echo $form->input('file', array('type' => 'file'));
+echo $this->Form->input('file', array('type' => 'file'));
 ...
 }}}
 

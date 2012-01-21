@@ -30,7 +30,7 @@ the Transfer Behavior.
   But before you proceed you must create a table for it. Just call the schema
   shell and point it to the sql directory of the plugin:
   
-  $ cake schema run create -path plugins/media/config/sql -name Media
+  $ ./Console/cake schema run create -path Plugin/Media/Config/Sql -name Media
   
   After you've set up the associations in your app's model (here: _Movie_), files
   can be uploaded and associated with one call to _saveAll()_.
