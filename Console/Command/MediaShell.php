@@ -29,7 +29,8 @@ Configure::write('Cache.disable', true);
  * @package    media
  * @subpackage media.shells
  */
-class MediaShell extends Shell {
+App::uses('AppShell', 'Console/Command');
+class MediaShell extends AppShell {
 
 /**
  * Tasks
