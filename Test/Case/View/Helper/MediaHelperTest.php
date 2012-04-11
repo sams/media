@@ -24,13 +24,13 @@ if (!defined('MEDIA')) {
 	trigger_error('MEDIA constant already defined and not pointing to tests directory.', E_USER_ERROR);
 }
 
-require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'bootstrap.php';
 require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'core.php';
 require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Fixture' . DS . 'test_data.php';
 
 //App::import('Core', array('Helper', 'AppHelper', 'ClassRegistry'));
 App::core('ClassRegistry');
 App::uses('CakeRequest', 'Network');
+App::uses('Controller', 'Controller');
 App::uses('CakeEvent', 'Event');
 App::uses('Helper', 'View');
 App::uses('AppHelper', 'View/Helper');
@@ -98,7 +98,7 @@ class MediaHelperTest extends CakeTestCase {
 			$this->TmpFolder->pwd() . 'transfer' . DS => false,
 			$this->TmpFolder->pwd() . 'theme' . DS  => 'media/theme/'
 		);
-		$View = new View(new CakeRequest);
+		$View = new View(new Controller(new CakeRequest));
 		$this->Helper = new MediaHelper($View, $settings);
 	}
 
@@ -118,7 +118,7 @@ class MediaHelperTest extends CakeTestCase {
 			'image'	 => array('s' => array(), 'm' => array()),
 			'video' => array('s' => array(), 'xl' => array())
 		));
-		$Helper = new MockMediaHelper($settings);
+		$Helper = new MockMediaHelper(new View, $settings);
 	}
 
 	function testUrl() {
