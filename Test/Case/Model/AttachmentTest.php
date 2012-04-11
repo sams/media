@@ -28,6 +28,7 @@ if (!defined('MEDIA')) {
 	trigger_error('MEDIA constant already defined and not pointing to tests directory.', E_USER_ERROR);
 }
 require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Config' . DS . 'bootstrap.php';
+require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Config' . DS . 'core.php';
 require_once 'Media/Process.php';
 require_once 'Media/Info.php';
 

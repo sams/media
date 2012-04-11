@@ -27,6 +27,9 @@ if (!defined('MEDIA')) {
 	trigger_error('MEDIA constant already defined and not pointing to tests directory.', E_USER_ERROR);
 }
 require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'bootstrap.php';
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'core.php';
+
+SimpleTest::ignore('BaseBehaviorTestCase');
 
 /**
  * Base Behavior Test Case Class

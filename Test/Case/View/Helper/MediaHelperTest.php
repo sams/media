@@ -25,6 +25,7 @@ if (!defined('MEDIA')) {
 }
 
 require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'bootstrap.php';
+require_once dirname(dirname(dirname(dirname(dirname(__FILE__))))) . DS . 'Config' . DS . 'core.php';
 require_once dirname(dirname(dirname(dirname(__FILE__)))) . DS . 'Fixture' . DS . 'test_data.php';
 
 //App::import('Core', array('Helper', 'AppHelper', 'ClassRegistry'));
