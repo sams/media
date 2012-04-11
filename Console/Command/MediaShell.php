@@ -18,7 +18,6 @@
  */
 App::uses('Shell', 'Console');
 App::uses('ConnectionManager', 'Model');
-require_once(dirname(dirname(dirname(__FILE__))) . DS . 'Config' . DS.'bootstrap.php');
 require_once(dirname(dirname(dirname(__FILE__))) . DS . 'Config' . DS. 'core.php');
 App::uses('Folder', 'Utility');
 
